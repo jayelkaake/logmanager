@@ -1,0 +1,2 @@
+# logmanager
+Magento Log Manager
