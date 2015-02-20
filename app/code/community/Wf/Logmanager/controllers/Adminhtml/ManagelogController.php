@@ -61,6 +61,19 @@ class Wf_Logmanager_Adminhtml_ManagelogController extends Mage_Adminhtml_Control
     }
 
     /**
+     * Test function to see if log restrictions are working. Try restricting log for the Wf_Logmanager module.
+     * @return $this
+     */
+    public function testlogAction()
+    {
+        Mage::log("This is a test from the Wf_Logmanager module.");
+
+        die("Check logs now...");
+
+        return $this;
+    }
+
+    /**
      * If they're not allowed to acces the config then they're probably not allowed to access this section.
      * @return boolean
      */

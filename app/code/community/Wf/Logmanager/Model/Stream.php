@@ -5,7 +5,7 @@
  * @package     Wf_Logmanager
  * @author      Magecredit Team <hi@magecredit.com>
  */
-class Wf_Logmanager_Model_Stream extends Zend_Log_Writer_Stream
+class Wf_Logmanager_Model_Stream extends Wf_Logmanager_Model_Stream_Abstract
 {
     /**
      * Write a message to the log.
@@ -38,4 +38,5 @@ class Wf_Logmanager_Model_Stream extends Zend_Log_Writer_Stream
 
         return parent::_write($event);
     }
+    
 }
