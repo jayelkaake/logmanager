@@ -29,9 +29,11 @@ class Wf_Logmanager_Adminhtml_ManagelogController extends Mage_Adminhtml_Control
      */
     public function disableAction()
     {
-        $moduleKey = $this->getRequest()->getParam('module');
+        $moduleKey = $this->getRequest()->getParam('module');           
 
-        Mage::getSingleton('logmanager/manager')->disableLogging($moduleKey);
+        Mage::getSingleton('logmanager/manager')->disableLogging($moduleKey);     
+  
+        Mage::app()->getCacheInstance()->cleanType('config');
 
         $successMsg = Mage::helper('logmanager')->__("Logging for the module '%s' was successfully DISABLED.", $moduleKey);
         Mage::getSingleton('core/session')->addSuccess($successMsg);
@@ -50,7 +52,9 @@ class Wf_Logmanager_Adminhtml_ManagelogController extends Mage_Adminhtml_Control
     {
         $moduleKey = $this->getRequest()->getParam('module');
 
-        Mage::getSingleton('logmanager/manager')->enableLogging($moduleKey);
+        Mage::getSingleton('logmanager/manager')->enableLogging($moduleKey);      
+  
+        Mage::app()->getCacheInstance()->cleanType('config');
 
         $successMsg = Mage::helper('logmanager')->__("Logging for the module '%s' was successfully ENABLED.", $moduleKey);
         Mage::getSingleton('core/session')->addSuccess($successMsg);
