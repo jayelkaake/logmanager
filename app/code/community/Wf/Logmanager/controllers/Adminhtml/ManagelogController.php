@@ -69,10 +69,11 @@ class Wf_Logmanager_Adminhtml_ManagelogController extends Mage_Adminhtml_Control
      * @return $this
      */
     public function testlogAction()
-    {
-        Mage::log("This is a test from the Wf_Logmanager module.");
-
+    {                   
+        ini_set('display_errors', 1);
+        Mage::log("This is a test from the Wf_Logmanager module.");   
         die("Check logs now...");
+
 
         return $this;
     }
