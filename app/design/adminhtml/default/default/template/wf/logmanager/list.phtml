@@ -44,20 +44,20 @@
         var url;
         if(currentVal == 1) {
             question = '<?php echo $this->__("Are you sure you want to turn OFF logging for the module: "); ?>';
-            url = '<?php echo $this->getUrl("adminhtml/managelog/disable") ?>module/'+module;
+            url = '<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/managelog/disable") ?>module/'+module;
         } else {
             question = '<?php echo $this->__("Are you sure you want to turn ON logging for the module: "); ?>';
-            url = '<?php echo $this->getUrl("adminhtml/managelog/enable") ?>module/'+module;
+            url = '<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/managelog/enable") ?>module/'+module;
         }
         if(!confirm(question + module)) {
             return false;
         }
         if(currentVal == 1) {
             question = '<?php echo $this->__("Are you sure you want to turn OFF logging for the module: "); ?>';
-            url = '<?php echo $this->getUrl("adminhtml/managelog/disable") ?>module/'+module;
+            url = '<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/managelog/disable") ?>module/'+module;
         } else {
             question = '<?php echo $this->__("Are you sure you want to turn ON logging for the module: "); ?>';
-            url = '<?php echo $this->getUrl("adminhtml/managelog/enable") ?>module/'+module;
+            url = '<?php echo Mage::helper("adminhtml")->getUrl("adminhtml/managelog/enable") ?>module/'+module;
         }
 
         window.location = url;
